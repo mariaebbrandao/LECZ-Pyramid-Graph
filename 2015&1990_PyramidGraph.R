@@ -1,5 +1,5 @@
-setwd("/Users/mb/Documents/Baruch_IO_Master/Baruch_Graduate/Research Assistant/Deborah Balk/LECZ_Pyramid/Script/New")
-#setwd("P:/WRI_LECZ2019/Analysis/Graphs and Maps/LECZ_MERIT_v1/LECZ Pyramid Graph/script/Combined 2015 & 1990")
+setwd("/Users/mb/Documents/Baruch_IO_Master/Baruch_Graduate/Research Assistant/LECZ_Pyramid/Script/New")
+
 
 # install.packages("dplyr")
 # install.packages("ggplot2")
@@ -35,10 +35,8 @@ library(grid)
 # Used 1990 data to overlay graph in order to compare 2015 to 1990 
 # Towns and Semi-Dense Areas, Cities, Rural
 
-#data1990<-read_csv("P:/WRI_LECZ2019/Analysis/Graphs and Maps/LECZ_MERIT_v1/LECZ Pyramid Graph/data/Hasim_PrcCalculated_LECZ_stats_with_share_calculated.csv")
-#delta1990<-read_csv("P:/WRI_LECZ2019/Analysis/Graphs and Maps/LECZ_MERIT_v1/LECZ Pyramid Graph/data/LECZ_delta_merit_GHSSMOD_v2 copy 2.csv")
-data1990<-read_csv("/Users/mb/Documents/Baruch_IO_Master/Baruch_Graduate/Research Assistant/Deborah Balk/LECZ_Pyramid/Data/NewLECZdata/New LECZ Data To Use/Hasim_PrcCalculated_LECZ_stats_with_share_calculated.csv")
-delta1990<-read_csv("/Users/mb/Documents/Baruch_IO_Master/Baruch_Graduate/Research Assistant/Deborah Balk/LECZ_Pyramid/Data/NewLECZdata/New LECZ Data To Use/Delta/LECZ_delta_merit_GHSSMOD_v2 copy.csv")
+data1990<-read_csv("/Users/mb/Documents/Baruch_IO_Master/Baruch_Graduate/Research Assistant/LECZ_Pyramid/Data/NewLECZdata/New LECZ Data To Use/Hasim_PrcCalculated_LECZ_stats_with_share_calculated.csv")
+delta1990<-read_csv("/Users/mb/Documents/Baruch_IO_Master/Baruch_Graduate/Research Assistant/LECZ_Pyramid/Data/NewLECZdata/New LECZ Data To Use/Delta/LECZ_delta_merit_GHSSMOD_v2 copy.csv")
 
 #Countries with deltas 
 delta1990<-delta1990 %>% select("iso") %>% distinct()  #dropped duplicates
@@ -133,11 +131,9 @@ meritunder10m1990$CountryName1990ds= ifelse(meritunder10m1990$SmallIsland1990==T
 #------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # 2015 Data wrangling 
 #------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-#data2015<-read_csv("P:/WRI_LECZ2019/Analysis/Graphs and Maps/LECZ_MERIT_v1/LECZ Pyramid Graph/data/Hasim_PrcCalculated_LECZ_stats_with_share_calculated.csv")
-#delta2015<-read_csv("P:/WRI_LECZ2019/Analysis/Graphs and Maps/LECZ_MERIT_v1/LECZ Pyramid Graph/data/LECZ_delta_merit_GHSSMOD_v2 copy 2.csv")
 
-data2015<-read_csv("/Users/mb/Documents/Baruch_IO_Master/Baruch_Graduate/Research Assistant/Deborah Balk/LECZ_Pyramid/Data/NewLECZdata/New LECZ Data To Use/Hasim_PrcCalculated_LECZ_stats_with_share_calculated.csv")
-delta2015<-read_csv("/Users/mb/Documents/Baruch_IO_Master/Baruch_Graduate/Research Assistant/Deborah Balk/LECZ_Pyramid/Data/NewLECZdata/New LECZ Data To Use/Delta/LECZ_delta_merit_GHSSMOD_v2 copy.csv")
+data2015<-read_csv("/Users/mb/Documents/Baruch_IO_Master/Baruch_Graduate/Research Assistant/LECZ_Pyramid/Data/NewLECZdata/New LECZ Data To Use/Hasim_PrcCalculated_LECZ_stats_with_share_calculated.csv")
+delta2015<-read_csv("/Users/mb/Documents/Baruch_IO_Master/Baruch_Graduate/Research Assistant/LECZ_Pyramid/Data/NewLECZdata/New LECZ Data To Use/Delta/LECZ_delta_merit_GHSSMOD_v2 copy.csv")
 
 #Countries with deltas 
 delta2015<-delta2015 %>% select("iso") %>% distinct()  #dropped duplicates
@@ -475,8 +471,8 @@ test1<-ggdraw()+
   draw_plot(aligned_plots[[2]])
 
 
-#setwd("P:/WRI_LECZ2019/Analysis/Graphs and Maps/LECZ_MERIT_v1/LECZ Pyramid Graph/output_graph/2015&1990_Combined")
-setwd("/Users/mb/Documents/Baruch_IO_Master/Baruch_Graduate/Research Assistant/Deborah Balk/LECZ_Pyramid/Graphical Output/New Data Set/MoreThan_100K people or are More Than 1000km2")
+
+setwd("/Users/mb/Documents/Baruch_IO_Master/Baruch_Graduate/Research Assistant/LECZ_Pyramid/Graphical Output/New Data Set/MoreThan_100K people or are More Than 1000km2")
 
 # To save Graph with Countries that have < 100K persons OR are < 1000km2
 ggsave(test1, filename=paste("Less_Top50Countries" ,".pdf"),  width = 55, height = 80, dpi=200, limitsize = FALSE)
